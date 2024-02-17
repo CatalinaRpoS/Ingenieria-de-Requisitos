@@ -1,0 +1,119 @@
+.container{
+
+    display: flex;
+    flex-direction: column;
+}
+
+.cabecera{
+
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    background-color: #d90429;
+    
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-style: normal;
+    color: white;
+
+}
+
+#titulo__principal{
+
+    font-weight: 700;
+    font-size: 20pt;
+}
+
+#icono{
+
+    height: 100px;
+    width: auto;
+    padding-right: 20px;
+}
+
+.container__informaciones{
+
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+
+    font-weight: 300;
+    font-size: 10pt;
+
+    text-align: justify;
+}
+
+.formulario{
+
+    font-family: "Poppins", sans-serif;
+    font-style: normal;
+
+    font-weight: 300;
+    font-size: 10pt;
+
+    background: #f5f3f4;
+}
+
+#titulo__calculadora{
+
+    font-weight: 400;
+    font-size: 20pt;
+}
+
+.informacion{
+
+    padding-left: 15px;
+    
+}
+
+#peso_usuario{
+
+    height: 30px;
+    width: 50%;
+
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    
+}
+
+#altura_usuario{
+
+    height: 30px;
+    width: 50%;
+
+    border-radius: 10px;
+    border-width: 1px;
+    border-color: black;
+    
+}
+
+#boton_enviar{
+
+    height: 40px;
+    width: 50%;
+    
+    margin-top: 10px;
+
+    border-radius: 10px;
+    border-width: 0px;
+
+    background: #d90429;
+
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 300;
+    font-size: 15pt;
+    color: white;
+
+    transition: background-color 0.4s ease;
+}
+
+#boton_enviar:hover:enabled{
+
+    background: #ef233c;
+    cursor: pointer;
+}
+
+#boton_enviar:disabled{
+       
+    background: #aaaaaa;
+}

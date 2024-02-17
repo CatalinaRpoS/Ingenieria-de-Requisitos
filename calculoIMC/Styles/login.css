@@ -1,0 +1,12 @@
+.container__contenido{
+
+    display: flex;
+    flex-direction: row;
+
+}
+
+#xd{
+
+    font-family: "Be Vietnam Pro", sans-serif;;
+}
+
