@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es-co">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png" type="image/png">
+    <link rel="stylesheet" href="styles.css">
+    <title>Cálculo IMC</title>
+</head>
+<body>
+    <div class="container">
+        <div class="container__contenido">
+            
+            <div class="container__informaciones">
+                <div class="container__texto">
+                    <h1>Cálculo del IMC</h1>
+                    <h2>Este programa calculará su índice de masa corporal y le ayudará a interpretar los resultados</h2>
+                    <p class="texto__parrafo"></p>
+                </div>
+            <div class="formulario">   
+                <form>
+                    <div class="informacion">
+                        <label id="label_peso">Ingrese su peso en kg:</label>
+                        <input type="number" id="peso_usuario" min="0" max="1000" required>
+                        <p></p>
+                        <label id="label_altura">Ingrese su altura en metros:</label> 
+                        <input type="number" id="altura_usuario" min="0" max="10" required>
+                        <p></p>
+                    </div>
+                    <div class="botones">
+                        <button onclick="calcularIMC();" class="container__enviar" type="submit" id="elSubmit">Calcular</button>
+                        <!-- ESTE BOTÓN PUEDE SALIR DESPUÉS DE CALCULAR EL IMC Y QUE SALGAN LOS RESULTADOS Y SU INTERPRETACIÓN
+                            <button onclick="guardarResultados();" class="container__boton" id="reiniciar">Guardar Resultados</button>-->
+                    </div>
+                </form>
+            </div> 
+</body>
+</html>
