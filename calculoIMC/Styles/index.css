@@ -51,24 +51,41 @@
     font-size: 10pt;
 
     background: #f5f3f4;
+    display: flex;
+}
+
+.formulario__container{
+    width: 50%;
+    height: 100%;
+}
+
+#resultado{
+
+    font-weight: 700;
+    font-size: 20pt;
+    color: #d90429;
+    text-align: center;
+    justify-content: center;
+    height: 100%;
 }
 
 #titulo__calculadora{
 
+    padding-left: 20px;
     font-weight: 400;
     font-size: 20pt;
 }
 
 .informacion{
 
-    padding-left: 15px;
+    padding: 10px 20px;
     
 }
 
 #peso_usuario{
 
     height: 30px;
-    width: 50%;
+    width: 100%;
 
     border-radius: 10px;
     border-width: 1px;
@@ -79,7 +96,7 @@
 #altura_usuario{
 
     height: 30px;
-    width: 50%;
+    width: 100%;
 
     border-radius: 10px;
     border-width: 1px;
@@ -90,7 +107,7 @@
 #boton_enviar{
 
     height: 40px;
-    width: 50%;
+    width: 100%;
     
     margin-top: 10px;
 

@@ -36,34 +36,36 @@
 
             <div class="formulario">   
                 
-                <h2 id="titulo__calculadora">Calculadora IMC</h3>
-
-                <form>
-                    
+               
+                <div class = "formulario__container"> 
+                    <h2 id="titulo__calculadora">Calculadora IMC</h2>
                     <div class="informacion">
 
-                        <label id="label_peso">Ingrese su peso en kg:</label>
-                        <p></p>
-                        <input type="number" id="peso_usuario" min="0" max="1000" required>
-                        
-                        <p></p>
-                        
-                        <label id="label_altura">Ingrese su altura en metros:</label>
-                        <p></p> 
-                        <input type="number" id="altura_usuario" min="0" max="10" required>
-                        
-                        <p></p>
+                    <label id="label_peso">Ingrese su peso en kg:</label>
+                    <p></p>
+                    <input type="number" id="peso_usuario"  min= "12.2" max= "250" step="any" required>
+                    
+                    <p></p>
+                    
+                    <label id="label_altura">Ingrese su altura en metros:</label>
+                    <p></p> 
+                    <input type="number" id="altura_usuario" min= "0.86" max= "2.50" step="any" required>
+                    
+                    <p></p>
 
-                        <div class="botones">
-                            <button onclick="calcularIMC();" id="boton_enviar" type="submit" disabled>Calcular</button>
-                            
-                            <!-- ESTE BOTÓN PUEDE SALIR DESPUÉS DE CALCULAR EL IMC Y QUE SALGAN LOS RESULTADOS Y SU INTERPRETACIÓN
-                                <button onclick="guardarResultados();" class="container__boton" id="reiniciar">Guardar Resultados</button>-->
-                        </div>
+                    <div class="botones">
+                        <button onclick="calcularIMC();" id="boton_enviar">Calcular</button>
+                        
+                        <!-- ESTE BOTÓN PUEDE SALIR DESPUÉS DE CALCULAR EL IMC Y QUE SALGAN LOS RESULTADOS Y SU INTERPRETACIÓN
+                            <button onclick="guardarResultados();" class="container__boton" id="reiniciar">Guardar Resultados</button>-->
                     </div>
-
-                </form>
-
+                    </div>
+                </div>
+                <div class = "formulario__container">
+                    <p id="resultado"></p>   
+                </div>
+                
             </div> 
+            <script src="app.js"></script>
 </body>
 </html>
