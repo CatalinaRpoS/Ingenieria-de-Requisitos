@@ -1,72 +1,118 @@
 <!DOCTYPE html>
 <html lang="es-co">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="img/icon.png" type="image/png">
-    <link rel="stylesheet" href="Styles\index.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="img/icon.png" type="image/png" />
+    <link rel="stylesheet" href="Styles\index.css" />
     <title>Cálculo IMC</title>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-</head>
-<body>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
     <div class="container">
-        
-        <div class="container__contenido">
+      <div class="container__contenido">
+        <div class="cabecera">
+          <img id="icono" src="img/icon.png" alt="Pesa" />
 
-            <div class="cabecera">
+          <h1 id="titulo__principal">
+            Centro De Control y Prevención De Salud
+          </h1>
+        </div>
 
-                <img id="icono" src="img/icon.png" alt="Pesa">
+        <div class="container__informaciones">
+          <div class="informacion">
+            <p>
+              El índice de masa corporal (IMC) es la relación entre la masa
+              corporal de una persona y su estatura. Según los valores
+              propuestos por la Organización Mundial de la Salud (OMS), el IMC
+              es uno de los principales recursos para evaluar el estado
+              nutricional.
+            </p>
+            <p>
+              Este programa calculará tu índice de masa corporal y le ayudará a
+              interpretar los resultados.
+            </p>
+          </div>
+          <div class="informacion">
+            <img src="img/imc.jpeg" alt="Cálculo IMC" />
+          </div>
+        </div>
 
-                <h1 id="titulo__principal">Centro De Control y Prevencion De Malos Diseños</h1>
+        <div class="formulario">
+          <div class="formulario__container">
+            <h2 id="titulo__calculadora">Calculadora IMC</h2>
+            <div class="informacion">
+              <label id="label_peso">Ingresa tu peso en Kg:</label>
+              <p></p>
+              <input
+                type="number"
+                id="peso_usuario"
+                min="12.2"
+                max="250"
+                step="any"
+                required
+              />
 
+              <p></p>
+
+              <label id="label_altura">Ingresa tu altura en metros:</label>
+              <p></p>
+              <input
+                type="number"
+                id="altura_usuario"
+                min="0.86"
+                max="2.50"
+                step="any"
+                required
+              />
+
+              <p></p>
+
+              <div class="botones">
+                <button onclick="calcularIMC();" class="boton_enviar">
+                  Calcular
+                </button>
+
+                <button
+                  onclick="guardarResultados();"
+                  class="container__boton boton_enviar"
+                  disabled
+                >
+                  Guardar Resultados
+                </button>
+              </div>
             </div>
-            
-            <div class="container__informaciones">
-                
-                <p>El índice de masa corporal (IMC) es la relación entre la masa corporal de una persona y su estatura. Según los valores propuestos por la Organización Mundial de la Salud (OMS), el IMC es uno de los principales recursos para evaluar el estado nutricional.</p>
-                <p>Este programa calculará su índice de masa corporal y le ayudará a interpretar los resultados</p>
-            
-            </div>
+          </div>
+          <div class="formulario__container">
+            <p id="resultado_imc"></p>
+            <p id="categoria"></p>
+            <p id="recomendacion"></p>
+          </div>
+        </div>
 
-            <div class="formulario">   
-                
-               
-                <div class = "formulario__container"> 
-                    <h2 id="titulo__calculadora">Calculadora IMC</h2>
-                    <div class="informacion">
+        <br />
+        <br />
 
-                    <label id="label_peso">Ingrese su peso en kg:</label>
-                    <p></p>
-                    <input type="number" id="peso_usuario"  min= "12.2" max= "250" step="any" required>
-                    
-                    <p></p>
-                    
-                    <label id="label_altura">Ingrese su altura en metros:</label>
-                    <p></p> 
-                    <input type="number" id="altura_usuario" min= "0.86" max= "2.50" step="any" required>
-                    
-                    <p></p>
-
-                    <div class="botones">
-                        <button onclick="calcularIMC();" id="boton_enviar">Calcular</button>
-                        
-                        <!-- ESTE BOTÓN PUEDE SALIR DESPUÉS DE CALCULAR EL IMC Y QUE SALGAN LOS RESULTADOS Y SU INTERPRETACIÓN
-                            <button onclick="guardarResultados();" class="container__boton" id="reiniciar">Guardar Resultados</button>-->
-                    </div>
-                    </div>
-                </div>
-                <div class = "formulario__container">
-                    <p id="resultado"></p>   
-                </div>
-                
-            </div> 
-            <script src="app.js"></script>
-</body>
+        <div class="footer">
+          <p>Ingeniería de Requisitos</p>
+          <p>Universidad Nacional de Colombia</p>
+          <p>2024</p>
+        </div>
+        <script src="app.js"></script>
+      </div>
+    </div>
+  </body>
 </html>

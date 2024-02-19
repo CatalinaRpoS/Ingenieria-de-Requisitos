@@ -1,153 +1,147 @@
-.container{
-
-    display: flex;
-    flex-direction: column;
+.container {
+  display: flex;
+  flex-direction: column;
 }
 
+.cabecera {
+  display: flex;
 
-.cabecera{
+  align-items: center;
 
-    display: flex;
-    flex-direction: row;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-style: normal;
+  color: white;
 
-    align-items: center;
-    
-    
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-style: normal;
-    color: white;
-
-    background-color: #d90429;
-
+  background-color: #d90429;
 }
 
-#titulo__principal{
+.footer {
+  display: flex;
+  justify-content: space-around;
 
-    font-weight: 700;
-    font-size: 20pt;
+  font-size: 1.1em;
+  background-color: #d90429;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-style: normal;
+  color: white;
+
+  padding: 1em;
 }
 
-#icono{
-
-    height: 100px;
-    width: auto;
-    padding-right: 20px;
+#titulo__principal {
+  font-weight: 700;
+  font-size: 2em;
 }
 
-.container__informaciones{
-
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-
-    font-weight: 300;
-    font-size: 10pt;
-
-    text-align: justify;
+#icono {
+  height: 100px;
+  width: auto;
+  padding-right: 20px;
 }
 
-.formulario{
-    
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
+.container__informaciones {
+  display: grid;
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 
-    font-weight: 300;
-    font-size: 10pt;
+  font-weight: 300;
+  font-size: 1.2em;
+  padding: 0.5em;
 
-    background: #f5f3f4;
-    display: flex;
+  text-align: justify;
 }
 
-.formulario__container{
-    width: 50%;
-    height: 100%;
+.informacion {
+  margin: 0 auto;
 }
 
-#resultado{
+.formulario {
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
 
-    font-weight: 700;
-    font-size: 20pt;
-    color: #d90429;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
+  font-weight: 300;
+  font-size: 10pt;
+
+  background: #f5f3f4;
+  display: flex;
 }
 
-#titulo__calculadora{
+.formulario__container {
+  width: 50%;
+  height: 100%;
 
-    padding-left: 20px;
-    font-weight: 400;
-    font-size: 20pt;
+  font-size: 1.3em;
 }
 
-.informacion{
-
-    padding: 10px 20px;
-    
+#resultado_imc, #categoria, #recomendacion {
+  font-weight: 700;
+  font-size: 20pt;
+  text-align: center;
+  justify-content: center;
+  height: 100%;
 }
 
-#peso_usuario{
-
-    height: 30px;
-    width: 100%;
-
-    border-radius: 10px;
-    border-width: 1px;
-    border-color: black;
-
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    
-
-    font-weight: 300;
-    font-size: 10pt;
-    
+input {
+  font-size: 1em !important;
+  padding: 0.4em;
 }
 
-#altura_usuario{
-
-    height: 30px;
-    width: 100%;
-
-    border-radius: 10px;
-    border-width: 1px;
-    border-color: black;
-
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    
-
-    font-weight: 300;
-    font-size: 10pt;
-    
+#titulo__calculadora {
+  padding-left: 20px;
+  font-weight: 500;
+  font-size: 1.9em;
 }
 
-#boton_enviar{
-
-    height: 40px;
-    width: 100%;
-    
-    margin-top: 10px;
-
-    border-radius: 10px;
-    border-width: 0px;
-
-    background: #d90429;
-
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 300;
-    font-size: 14pt;
-    color: white;
-
-    transition: background-color 0.4s ease;
+.informacion {
+  padding: 10px 20px;
 }
 
-#boton_enviar:hover:enabled{
+#peso_usuario,
+#altura_usuario {
+  height: 30px;
+  width: 100%;
 
-    background: #ef233c;
-    cursor: pointer;
+  border-radius: 22px;
+  border-width: 1px;
+  border-color: lightgrey;
+
+  font-family: "Poppins", sans-serif;
+  font-style: normal;
+
+  font-weight: 300;
+  font-size: 10pt;
 }
 
-#boton_enviar:disabled{
-       
-    background: #aaaaaa;
+.botones {
+  display: flex;
+  justify-content: space-between;
+}
+
+.boton_enviar {
+  height: 40px;
+
+  flex: 1;
+  margin: 0.4em;
+
+  border-radius: 10px;
+  border-width: 0px;
+
+  background: #d90429;
+
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 300;
+  font-size: 14pt;
+  color: white;
+
+  transition: background-color 0.4s ease;
+}
+
+.boton_enviar:hover:enabled {
+  background: #ef233c;
+  cursor: pointer;
+}
+
+.boton_enviar:disabled {
+  background: #aaaaaa;
 }
