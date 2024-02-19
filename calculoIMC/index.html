@@ -89,9 +89,18 @@
                 <button
                   onclick="guardarResultados();"
                   class="container__boton boton_enviar"
+                  id = "guardar_resultados"
                   disabled
                 >
                   Guardar Resultados
+                </button>
+              </div>
+              <div class="botones">
+                <button onclick="logout();" class="boton_enviar">
+                  Salir
+                </button>
+                <button onclick="mostrarHistorico();" class="boton_enviar">
+                  Mostrar historico
                 </button>
               </div>
             </div>
@@ -100,6 +109,7 @@
             <p id="resultado_imc"></p>
             <p id="categoria"></p>
             <p id="recomendacion"></p>
+          </div>
           </div>
         </div>
 
