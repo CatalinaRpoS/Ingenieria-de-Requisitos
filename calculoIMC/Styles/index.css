@@ -74,12 +74,54 @@
   font-size: 1.3em;
 }
 
+#tablaHistorico {
+  font-family: "Be Vietnam Pro", sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+
+  background: #f5f3f4;
+  display: flex;
+  justify-content: center;
+  padding: 2em;
+}
+
+#tablaHistorico table{
+  width: 30em;
+  text-align: center;
+}
+
+#tablaHistorico td, #tablaHistorico th {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+#tablaHistorico tr:nth-child(even){background-color: #f2f2f2;}
+
+#tablaHistorico tr:hover {background-color: #ddd;}
+
+#tablaHistorico th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: center;
+  background-color: #04AA6D;
+  color: white;
+}
+
+#tablaHistorico tbody{
+  font-family: "Poppins", sans-serif;
+}
+
 #resultado_imc, #categoria, #recomendacion {
   font-weight: 700;
   font-size: 20pt;
   text-align: center;
   justify-content: center;
   height: 100%;
+}
+
+#resultado_imc {
+  margin-top: 3.2em;
 }
 
 input {

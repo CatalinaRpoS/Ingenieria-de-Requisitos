@@ -3,37 +3,7 @@ let peso_Minimo = 12.2; // promedio kg niño de 2 años
 let estatura_Maxima = 2.5; // mts
 let estaruta_minima = 0.86; // promedio mts niño de 2 años
 let imc;
-let username;
-
-function register() {
-  // Obtener nombre de usuario y contraseña ingresados por el usuario
-  username = document.getElementById('username').value;
-  let password = document.getElementById('password').value;
-  
-  // Verificar si el usuario ya existe en el localStorage
-  if (localStorage.getItem(username)) {
-      alert('El usuario ya está registrado');
-  } else {
-      // Guardar nombre de usuario y contraseña encriptada
-      localStorage.setItem(username, password);
-      alert('Usuario registrado exitosamente');
-  }
-}
-
-function login() {
-  // Obtener nombre de usuario y contraseña ingresados por el usuario
-  let username = document.getElementById('username').value;
-  password = document.getElementById('password').value;
-  // Obtener la contraseña almacenada para el usuario
-  let storedPassword = localStorage.getItem(username);
-
-  // Verificar el inicio de sesión
-  if (storedPassword && storedPassword === password) {
-      window.location.href = 'index.html';
-  } else {
-      alert('Nombre de usuario o contraseña incorrectos');
-  }
-}
+let categoria;
 
 function asignarTextoElemento(id, texto, color_elemento) {
   let elementoHTML = document.getElementById(id);
@@ -50,6 +20,7 @@ window.addEventListener("keydown", (event) => {
 
 function logout() {
   window.location.href = "login.html";
+  localStorage.removeItem("historico");
 }
 
 function calcularIMC() {
@@ -89,7 +60,8 @@ function calcularIMC() {
       "Tu IMC es de " + imc,
       "rgb(0,251,255)"
     );
-    asignarTextoElemento("categoria", "Bajo peso", "rgb(0,251,255)");
+    categoria="Bajo peso";
+    asignarTextoElemento("categoria", categoria, "rgb(0,251,255)");
     asignarTextoElemento(
       "recomendacion",
       "Tu peso está por debajo del rango saludable. Considera hablar con un profesional de la salud para mejorar tu dieta y hábitos alimenticios."
@@ -100,7 +72,8 @@ function calcularIMC() {
       "Tu IMC es de " + imc,
       "green"
     );
-    asignarTextoElemento("categoria", "Peso saludable", "green");
+    categoria="Peso saludable";
+    asignarTextoElemento("categoria", categoria, "green");
     asignarTextoElemento(
       "recomendacion",
       "Tu peso está dentro del rango saludable. ¡Sigue manteniendo un estilo de vida activo y una dieta equilibrada!"
@@ -111,7 +84,8 @@ function calcularIMC() {
       "Tu IMC es de " + imc,
       "orange"
     );
-    asignarTextoElemento("categoria", "Sobrepeso", "orange");
+    categoria="Sobrepeso";
+    asignarTextoElemento("categoria", categoria, "orange");
     asignarTextoElemento(
       "recomendacion",
       "Tienes sobrepeso. Considera hacer cambios en tu dieta y aumentar la actividad física para reducir tu riesgo de problemas de salud relacionados con el peso."
@@ -122,7 +96,8 @@ function calcularIMC() {
       "Tu IMC es de " + imc,
       "red"
     );
-    asignarTextoElemento("categoria", "Obesidad tipo 1", "red");
+    categoria= "Obesidad tipo 1";
+    asignarTextoElemento("categoria", categoria, "red");
     asignarTextoElemento(
       "recomendacion",
       "Tienes obesidad grado 1. Es importante tomar medidas para controlar tu peso, como modificar tu dieta y hacer ejercicio regularmente."
@@ -133,6 +108,7 @@ function calcularIMC() {
       "Tu IMC es de " + imc,
       "pink"
     );
+    categoria="Obesidad tipo 2";
     asignarTextoElemento("categoria", "Obesidad tipo 2", "pink");
     asignarTextoElemento(
       "recomendacion",
@@ -144,7 +120,8 @@ function calcularIMC() {
       "Tu IMC es de " + imc,
       "purple"
     );
-    asignarTextoElemento("categoria", "Obesidad tipo 3", "purple");
+    categoria="Obesidad tipo 3";
+    asignarTextoElemento("categoria", categoria, "purple");
     asignarTextoElemento(
       "recomendacion",
       "Tienes obesidad grado 3, también conocida como obesidad mórbida. Este es un estado de salud grave que requiere atención médica inmediata. Busca ayuda profesional para iniciar un plan de pérdida de peso seguro y efectivo."
@@ -159,16 +136,30 @@ function guardarResultados(){
   let fecha_actual = fecha.getDate() + "/" + (fecha.getMonth() + 1) + "/" + fecha.getFullYear();
   let hora = fecha.getHours() + ":" + fecha.getMinutes();
   let fecha_hora = fecha_actual + " " + hora;
-  let historico = JSON.parse(localStorage.getItem(username)) || [];
+  let historico = JSON.parse(localStorage.getItem("historico")) || [];
   historico.push({
     fecha: fecha_hora,
     imc: imc,
+    categoria: categoria,
   });
-  localStorage.setItem(username, JSON.stringify(historico));
+  localStorage.setItem("historico", JSON.stringify(historico));
+  swal({
+    title: "Los resultados fueron guardados exitosamente",
+    icon: "success",
+  });
 }
 
 function mostrarHistorico(){
-  
+  let historico = JSON.parse(localStorage.getItem("historico")) || [];
+  let tablaHTML = "<table><thead><tr><th>Fecha y Hora</th><th>IMC</th><th>Categoría</th></tr></thead><tbody>";
+
+  historico.forEach(dato => {
+    tablaHTML += `<tr><td>${dato.fecha}</td><td>${dato.imc}</td><td>${dato.categoria}</td></tr>`;
+  });
+
+  tablaHTML += "</tbody></table>";
+
+  document.getElementById("tablaHistorico").innerHTML = tablaHTML;
 }
 
 function limpiar() {
