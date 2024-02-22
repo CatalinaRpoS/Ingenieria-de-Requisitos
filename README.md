@@ -8,3 +8,7 @@
 - Jerónimo Ledesma Patiño
 - Alejandro Orozco Ochoa
 - Tomás Rodruíguez Taborda
+
+## Proyectos
+
+- Cálculo del IMC 
