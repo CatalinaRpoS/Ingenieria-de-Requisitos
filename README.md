@@ -7,7 +7,7 @@
 - Miller Johan Chica Acero
 - Jerónimo Ledesma Patiño
 - Alejandro Orozco Ochoa
-- Tomás Rodruíguez Taborda
+- Tomás Rodríguez Taborda
 
 ## Proyectos
 
